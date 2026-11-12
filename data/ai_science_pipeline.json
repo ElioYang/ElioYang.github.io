@@ -1,0 +1,32 @@
+{
+  "title": "From inventory to evaluation",
+  "steps": [
+    {
+      "label": "Inventory",
+      "value": "1,743 records",
+      "note": "AI systems, tools, and studies across scientific disciplines"
+    },
+    {
+      "label": "Modeling set",
+      "value": "320 projects",
+      "note": "Selected from the inventory"
+    },
+    {
+      "label": "Split",
+      "value": "256 develop · 64 held out",
+      "note": "Held-out set used once for the final evaluation"
+    },
+    {
+      "label": "Held-out result",
+      "value": "Macro-F1 0.645 · Accuracy 0.719",
+      "note": "Agreement with existing labels, not verified autonomy"
+    },
+    {
+      "label": "Next",
+      "value": "Independent test",
+      "note": "Planned; 14 new projects of the same type so far",
+      "pending": true
+    }
+  ],
+  "source": "Yang, James Scholar interim report (2026)"
+}

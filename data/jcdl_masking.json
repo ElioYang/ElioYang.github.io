@@ -1,15 +1,48 @@
 {
-  "title": "Style-oriented passages: retrieval under phrase masking",
+  "title": "Masking copied phrases collapses the stylometric signal",
   "source": "Yang, JCDL 2026, Table 2",
   "x_label": "Masking level",
-  "x": ["Original", "Mask shared 5-grams", "Mask shared 4-grams", "Mask shared 3-grams"],
+  "x": [
+    "Original",
+    "Mask shared 5-grams",
+    "Mask shared 4-grams",
+    "Mask shared 3-grams"
+  ],
   "y_label": "Mean reciprocal rank (MRR)",
   "y_max": 1.0,
   "series": [
-    {"name": "Word TF–IDF", "values": [0.956, 0.938, 0.913, 0.598]},
-    {"name": "Stylometry", "values": [0.540, 0.049, 0.036, 0.018], "highlight": true},
-    {"name": "Structural features", "values": [0.353, 0.239, 0.245, 0.267]}
+    {
+      "name": "Word TF–IDF",
+      "values": [
+        0.956,
+        0.938,
+        0.913,
+        0.598
+      ]
+    },
+    {
+      "name": "Stylometry",
+      "values": [
+        0.54,
+        0.049,
+        0.036,
+        0.018
+      ],
+      "highlight": true
+    },
+    {
+      "name": "Structural features",
+      "values": [
+        0.353,
+        0.239,
+        0.245,
+        0.267
+      ]
+    }
   ],
-  "reference_line": {"name": "Random ranking", "value": 0.024},
-  "caption": "Masking words in phrases shared with the source barely affects word-based retrieval but collapses the stylometric signal (.540 → .018), which falls below random ranking. 60 passages, 260 candidate chapters."
+  "reference_line": {
+    "name": "Random ranking",
+    "value": 0.024
+  },
+  "caption": "Word-based retrieval holds up until 3-gram masking (.956 → .598). The stylometric signal collapses at the first masking step and ends at .018, below random ranking. Style-oriented passages only: 60 passages, 260 candidate chapters."
 }

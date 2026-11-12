@@ -35,17 +35,8 @@
     "ML-KEM-768": "ML-KEM-768",
     "Hybrid-512 (ECDH + ML-KEM-512)": "Hybrid-512"
   },
-  "publication_status": {
-    "assets/papers/asist2026-stylometry.pdf": "Accepted; forthcoming"
-  },
-  "additional_project_links": {
-    "ai-science": [
-      {
-        "label": "James Scholar office-hour report (November)",
-        "href": "../assets/papers/JS_Office_Hour_Nov_Yuxing_Yang.pdf"
-      }
-    ]
-  },
+  "publication_status": {},
+  "additional_project_links": {},
   "report_files": [
     "JS_Interim_Report_Yuxing_Yang.pdf",
     "JS_Office_Hour_Nov_Yuxing_Yang.pdf"
@@ -81,6 +72,37 @@
     "no_reason": "—",
     "record_id": "Request {id}",
     "back": "← Back to Yuxing Yang’s portfolio",
-    "error": "Default Inspector could not load its rules. Please reload the page."
-  }
+    "error": "Default Inspector could not load its rules. Please reload the page.",
+    "law": "From the law",
+    "show_all": "Show all ages",
+    "show_selected": "Show selected age",
+    "locked": "Locked",
+    "parent": "Parent",
+    "record_button": "Record ({n})",
+    "view_label": "Privacy baseline",
+    "flow_sentence": "{information}: {sender} → {recipient}. {principle}."
+  },
+  "updated_template": "Updated {updated}",
+  "footer_template": "{name} · {email}",
+  "preview_ids": [
+    "text_chat_strangers",
+    "late_night_notifications",
+    "monitoring_signal"
+  ],
+  "open_demo": "Open the demo",
+  "source_template": "Source: {source}",
+  "closed_label": "closed by the staleness fix",
+  "single_client": "single client",
+  "concurrent_load": "concurrent load",
+  "jurisdiction": "Jurisdiction",
+  "sample": "n",
+  "percentage": "{value}%",
+  "photo_alt": "Yuxing Yang holding the ITC 2026 undergraduate first-place student paper award plaque",
+  "mini_title": "Default Inspector",
+  "mini_text": "See the privacy defaults a multiplayer game sets at each age, why each one exists, and contest any of them.",
+  "pipeline_columns": [
+    "Label",
+    "Value",
+    "Note"
+  ]
 }

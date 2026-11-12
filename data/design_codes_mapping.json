@@ -1,0 +1,43 @@
+{
+  "title": "Legal text becomes interface rules",
+  "subtitle": "How the child design codes I coded turn a concern about harm into a concrete interface requirement",
+  "columns": [
+    "Concern behind the rule",
+    "Interface rule the law requires",
+    "Where"
+  ],
+  "rows": [
+    {
+      "harm": "Compulsive use that disrupts sleep, eating, or learning",
+      "rule": "No push notifications to minors late at night or during school hours",
+      "where": "U.S. state codes (e.g., Vermont)"
+    },
+    {
+      "harm": "Contact and exposure to adults a child does not know",
+      "rule": "Minors are not visible to, or contactable by, unconnected adults by default",
+      "where": "U.S. state codes"
+    },
+    {
+      "harm": "Engagement features that keep children using a service",
+      "rule": "Engagement counts (likes, views) hidden by default",
+      "where": "U.S. state codes"
+    },
+    {
+      "harm": "Monitoring without the child's knowledge",
+      "rule": "A visible signal whenever someone, including a parent, is monitoring",
+      "where": "New Jersey, Vermont (Maryland does not require one)"
+    },
+    {
+      "harm": "Recommendations the user did not ask for",
+      "rule": "Recommend only from preferences the user stated; disclose the inputs used",
+      "where": "Vermont"
+    },
+    {
+      "harm": "Over-collection to verify age",
+      "rule": "Collect the minimum needed for age assurance and delete it after use",
+      "where": "All five U.S. states"
+    }
+  ],
+  "caption": "Each row pairs a harm with the design rule a law uses to address it. Whether children can find, understand, and use these controls is not something the laws themselves test.",
+  "source": "Coding of the UK Age Appropriate Design Code and five U.S. state laws (MD, NE, SC, NJ, VT), UIUC iSchool, 2026. Preliminary."
+}

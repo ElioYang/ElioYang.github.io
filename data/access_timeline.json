@@ -1,15 +1,46 @@
 {
-  "title": "Where exposure arises along an access transition",
+  "title": "Fixing staleness closes only part of the problem",
   "source": "Yang, CSLAW 2027 preprint, Table 7",
-  "axis": ["Request (t_r)", "Classified (t_c)", "Budget ends (t_c + b)", "Later"],
+  "axis": [
+    "Request made",
+    "Request decided",
+    "Deadline for every copy to update",
+    "Later"
+  ],
   "segments": [
-    {"from": 0, "to": 1, "label": "Before classification", "governed_by": "How the request is classified, and what happens in the meantime", "observation": "Review-first: 73/73 promotional probes still go through. Interim restriction: 0/73."},
-    {"from": 1, "to": 2, "label": "Enforcement window", "governed_by": "Lease length within the staleness budget b", "observation": "Strict lease at b = 2: 254 false grants fall inside the window the budget allows."},
-    {"from": 2, "to": 3, "label": "After the budget", "governed_by": "Whether the mechanism is correct", "observation": "Strict lease + revision guard: 0 late false grants. Push-only: 172. Long TTL: 2,738."}
+    {
+      "from": 0,
+      "to": 1,
+      "label": "While the request waits",
+      "governed_by": "What the system does before it decides",
+      "observation": "Review first: all 73 promotional-outreach test messages still went out. Restrict in the meantime: none did."
+    },
+    {
+      "from": 1,
+      "to": 2,
+      "label": "Allowed update window",
+      "governed_by": "How long cached permissions may live (the staleness budget)",
+      "observation": "With a strict lease, 254 outdated grants fell inside the window the budget allows."
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "label": "After the deadline",
+      "governed_by": "Whether the update mechanism is correct",
+      "observation": "Strict lease with revision check: 0 outdated grants. Push-only updates: 172. Long cache lifetime: 2,738."
+    }
   ],
   "side_tracks": [
-    {"label": "Unprobed path", "governed_by": "What the evidence declares it checked", "observation": "A secondary path served stale grants on 5/5 probes while primary-path evidence reported zero errors."},
-    {"label": "Already released", "governed_by": "Nothing, once released", "observation": "Encryption protects later values; an old key with old ciphertext still recovers the old value."}
+    {
+      "label": "A path nobody checked",
+      "governed_by": "What the evidence says it covered",
+      "observation": "A secondary lookup path honored outdated permissions in 5 of 5 probes, while evidence for the main path reported zero errors."
+    },
+    {
+      "label": "Already shared",
+      "governed_by": "Nothing, once it is out",
+      "observation": "Encryption protects future values. Anything already shared under the old key can still be read."
+    }
   ],
-  "caption": "Fixing staleness closes only one segment. The other exposures need a different remedy, and an evidence record that says what it did not check."
+  "caption": "A correct staleness fix closes the third segment. The other exposure points each need their own remedy, which is why an evidence record has to say what it did not check."
 }

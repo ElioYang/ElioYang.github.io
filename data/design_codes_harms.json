@@ -1,0 +1,96 @@
+{
+  "publish": true,
+  "title": "Which harms each law addresses (share of coded excerpts)",
+  "categories": [
+    "Autonomy",
+    "Psychological",
+    "Physical",
+    "Relationship",
+    "Economic",
+    "Discrimination",
+    "Reputational"
+  ],
+  "rows": [
+    {
+      "jurisdiction": "UK AADC",
+      "n": 140,
+      "values": [
+        68,
+        24,
+        21,
+        7,
+        5,
+        5,
+        1
+      ]
+    },
+    {
+      "jurisdiction": "Maryland",
+      "n": 44,
+      "values": [
+        57,
+        50,
+        39,
+        9,
+        27,
+        30,
+        0
+      ]
+    },
+    {
+      "jurisdiction": "Nebraska",
+      "n": 30,
+      "values": [
+        87,
+        23,
+        13,
+        23,
+        17,
+        0,
+        0
+      ]
+    },
+    {
+      "jurisdiction": "South Carolina",
+      "n": 44,
+      "values": [
+        73,
+        30,
+        18,
+        23,
+        18,
+        2,
+        0
+      ]
+    },
+    {
+      "jurisdiction": "New Jersey",
+      "n": 41,
+      "values": [
+        73,
+        34,
+        22,
+        22,
+        10,
+        2,
+        0
+      ]
+    },
+    {
+      "jurisdiction": "Vermont",
+      "n": 31,
+      "values": [
+        90,
+        23,
+        10,
+        26,
+        0,
+        6,
+        0
+      ]
+    }
+  ],
+  "value_note": "Percent of that law's excerpts carrying the code; an excerpt can carry several codes, so rows do not sum to 100. UK Reputational is a single excerpt (shown as 1).",
+  "caption": "Autonomy dominates in every law, partly by coding convention. Reputational harm is nearly absent. Preliminary: counts for Maryland, New Jersey, and Vermont will be updated after a pending coding revision.",
+  "source": "Preliminary coding, UIUC iSchool AADC project, 2026."
+}

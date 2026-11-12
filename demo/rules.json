@@ -2,7 +2,8 @@
   "app": {
     "name": "Default Inspector",
     "one_liner": "See the privacy defaults a multiplayer game sets for your age, why each one exists, and contest any of them.",
-    "footer": "Research prototype by Yuxing Yang. The age-tiered defaults reflect my analysis of the FTC's 2022 case against Epic Games and the UK Age Appropriate Design Code. Not legal advice; not affiliated with any game company. Nothing you type leaves this page."
+    "footer": "Research prototype by Yuxing Yang. The age-tiered defaults reflect my analysis of the FTC's 2022 case against Epic Games, the UK Age Appropriate Design Code, and the U.S. state design codes I coded. Not legal advice; not affiliated with any game company. Nothing you type leaves this page.",
+    "try_this": "Try this: choose Under 13, then switch to the one-size-fits-all view."
   },
   "age_bands": [
     {
@@ -59,7 +60,7 @@
             "Report and block buttons stay visible"
           ],
           "notice": "Turning this on lets players you don't know read and reply to what you type during matches. They cannot message you privately or hear your voice. You can turn it off any time.",
-          "parent_sees": "That this setting is on. A parent cannot override your choice.",
+          "parent_sees": "Whether this setting is on. A parent cannot override your choice.",
           "why": "Teens are old enough to decide this for themselves, but the default should not decide it for them.",
           "basis": "analysis"
         },
@@ -73,7 +74,9 @@
           "why": "Adult baseline.",
           "basis": "analysis"
         }
-      }
+      },
+      "flattened_exposes": "Strangers can read and reply to the child's messages during matches.",
+      "opens_stranger_contact": true
     },
     {
       "id": "voice_chat_strangers",
@@ -113,7 +116,9 @@
           "why": "Adult baseline.",
           "basis": "analysis"
         }
-      }
+      },
+      "flattened_exposes": "Strangers can hear the child's voice.",
+      "opens_stranger_contact": true
     },
     {
       "id": "private_messages_strangers",
@@ -153,7 +158,9 @@
           "why": "Adult baseline.",
           "basis": "analysis"
         }
-      }
+      },
+      "flattened_exposes": "Strangers can message the child one-to-one, outside any match.",
+      "opens_stranger_contact": true
     },
     {
       "id": "friend_requests",
@@ -200,7 +207,9 @@
           "why": "Adult baseline.",
           "basis": "analysis"
         }
-      }
+      },
+      "flattened_exposes": "Anyone can send a friend request, and friendship unlocks chat.",
+      "opens_stranger_contact": true
     },
     {
       "id": "display_name",
@@ -247,7 +256,9 @@
           "why": "Adult baseline.",
           "basis": "analysis"
         }
-      }
+      },
+      "flattened_exposes": "A real name used as a display name is shown to everyone in the match.",
+      "opens_stranger_contact": false
     },
     {
       "id": "parent_visibility",
@@ -286,6 +297,91 @@
           "why": "No parent link for adults.",
           "basis": "analysis"
         }
+      },
+      "flattened_exposes": "No parent can see or manage any of these settings.",
+      "opens_stranger_contact": false
+    },
+    {
+      "id": "late_night_notifications",
+      "label": "Notifications late at night",
+      "flow": {
+        "sender": "The game",
+        "information": "Push notifications",
+        "recipient": "You",
+        "principle": "Delivered to your phone at any hour"
+      },
+      "flattened_exposes": "The game can wake the child with notifications at any hour.",
+      "opens_stranger_contact": false,
+      "by_age": {
+        "u13": {
+          "default": "Off from midnight to 6 a.m.",
+          "options": [
+            "Off from midnight to 6 a.m."
+          ],
+          "outcome": "locked",
+          "basis": "law",
+          "why": "Several state design codes treat lost sleep as a harm of compulsive use, so late-night notifications stay off for minors."
+        },
+        "teen": {
+          "default": "Off from midnight to 6 a.m.",
+          "options": [
+            "Off from midnight to 6 a.m."
+          ],
+          "outcome": "locked",
+          "basis": "law",
+          "why": "The same quiet hours cover ages 13–17. They are set by law, not by the platform."
+        },
+        "adult": {
+          "default": "On at all hours",
+          "options": [
+            "On at all hours",
+            "Off from midnight to 6 a.m."
+          ],
+          "outcome": "user_choice",
+          "basis": "analysis",
+          "why": "Adult baseline."
+        }
+      }
+    },
+    {
+      "id": "monitoring_signal",
+      "label": "A signal when someone is monitoring your activity",
+      "flow": {
+        "sender": "The game",
+        "information": "The fact that you are being monitored",
+        "recipient": "You",
+        "principle": "Shown on screen whenever monitoring is active"
+      },
+      "flattened_exposes": "A parent, or anyone else with access, could monitor the child without the child knowing.",
+      "opens_stranger_contact": false,
+      "by_age": {
+        "u13": {
+          "default": "Always shown",
+          "options": [
+            "Always shown"
+          ],
+          "outcome": "locked",
+          "basis": "law",
+          "why": "Following New Jersey and Vermont, the child is told whenever anyone, a parent included, is monitoring. Maryland's code would let a parent monitor without a signal."
+        },
+        "teen": {
+          "default": "Always shown",
+          "options": [
+            "Always shown"
+          ],
+          "outcome": "locked",
+          "basis": "law",
+          "why": "Teens always know when they are being watched. The signal protects a teen's autonomy even with respect to a parent."
+        },
+        "adult": {
+          "default": "No parent link",
+          "options": [
+            "No parent link"
+          ],
+          "outcome": "locked",
+          "basis": "analysis",
+          "why": "No parent link for adults."
+        }
       }
     }
   ],
@@ -296,7 +392,13 @@
   },
   "flattened_view": {
     "toggle_label": "Show a one-size-fits-all platform",
-    "explainer": "Many platforms apply one baseline, usually an adult's, to everyone. I call this normative flattening (SOTICS 2026). Turn this on to see the adult defaults applied to the age you selected. Settings that change are highlighted."
+    "explainer": "Many platforms apply one baseline, usually an adult's, to everyone. I call this normative flattening (SOTICS 2026). Turn this on to see the adult defaults applied to the age you selected. Settings that change are highlighted.",
+    "toggle_options": [
+      "Age-tiered (this design)",
+      "One-size-fits-all"
+    ],
+    "summary_template": "On a one-size-fits-all platform, {changed} of {total} settings change for this age. {contact} of them open contact with people you don't know.",
+    "card_template": "{age_label} default: {own} → One-size-fits-all: {flat}"
   },
   "contest_record": {
     "title": "Your contest record",
@@ -319,12 +421,23 @@
   },
   "basis_labels": {
     "analysis": "From my analysis of the FTC's 2022 Epic Games case",
-    "prototype": "Prototype choice: not covered by that analysis, so set by applying the UK Age Appropriate Design Code's high-privacy-by-default standard"
+    "prototype": "Prototype choice: not covered by that analysis, so set by applying the UK Age Appropriate Design Code's high-privacy-by-default standard",
+    "law": "From the U.S. state design codes I coded in my research-assistant work (preliminary)"
   },
   "general_rules": [
     "Any change back to the age band's own default value uses outcome 'revert' (applied immediately), whatever the setting's outcome type.",
     "Each contest record keeps its own status and its own action buttons. While a record for a setting is pending, the Contest button for that setting is replaced by 'Request pending' plus a 'Withdraw' link.",
     "Switching to a different age band marks every pending record as 'Withdrawn: age band changed' and resets values to that band's defaults. Clicking the age band that is already selected does nothing.",
     "Reason text is trimmed before validation; when an objection is required (only one option), whitespace-only text is rejected with an inline message."
-  ]
+  ],
+  "action_labels": {
+    "locked": "Object to this default",
+    "parent_approval": "Ask a parent to change this",
+    "with_safeguards": "Change this setting",
+    "user_choice": "Change this setting"
+  },
+  "overview": {
+    "title": "All defaults at a glance",
+    "note": "Locked = cannot be changed at this age. Parent = needs a linked parent's approval."
+  }
 }
