@@ -1,5 +1,5 @@
 {
-  "title": "The hybrid's extra cost appears only under concurrent load",
+  "title": "The hybrid's extra cost grows sharply under concurrent load",
   "source": "Yang, ITC 2026 (testbed paper), Tables 3 and 5",
   "x_label": "Concurrent clients",
   "x": [
@@ -30,5 +30,5 @@
       "highlight": true
     }
   ],
-  "caption": "With one client, both schemes complete a handshake in about 30 ms (Table 3, mean of 100 runs). With 100 concurrent clients, Hybrid-512's mean latency is 50.9% higher (Table 5). Concurrency results are one trial per configuration and load level, with synchronized connections."
+  "caption": "With one client, Hybrid-512 is about 6 ms slower than ML-KEM-768 (35.4 vs. 29.2 ms; Table 3, mean of 100 runs). With 100 concurrent clients the gap is about 110 ms, or 50.9% (Table 5). Concurrency results are one trial per configuration and load level, with synchronized connections."
 }

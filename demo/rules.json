@@ -24,7 +24,8 @@
     "parent_approval": "This change needs approval from a linked parent account.",
     "with_safeguards": "You can change this. It turns on with safeguards, after a plain-language notice.",
     "user_choice": "Your choice. The change applies immediately.",
-    "revert": "Returning to this age's default always applies immediately."
+    "revert": "Returning to this age's default always applies immediately.",
+    "not_applicable": "Not applicable: adults have no linked parent account."
   },
   "settings": [
     {
@@ -293,7 +294,7 @@
           "options": [
             "Nothing"
           ],
-          "outcome": "locked",
+          "outcome": "not_applicable",
           "why": "No parent link for adults.",
           "basis": "analysis"
         }
@@ -374,11 +375,11 @@
           "why": "Teens always know when they are being watched. The signal protects a teen's autonomy even with respect to a parent."
         },
         "adult": {
-          "default": "No parent link",
+          "default": "No signal",
           "options": [
             "No parent link"
           ],
-          "outcome": "locked",
+          "outcome": "not_applicable",
           "basis": "analysis",
           "why": "No parent link for adults."
         }

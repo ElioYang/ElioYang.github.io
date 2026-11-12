@@ -13,7 +13,7 @@
       "to": 1,
       "label": "While the request waits",
       "governed_by": "What the system does before it decides",
-      "observation": "Review first: all 73 promotional-outreach test messages still went out. Restrict in the meantime: none did."
+      "observation": "Review first: all 73 promotional-outreach probes were still permitted. Restrict in the meantime: none were. Probes test permission only; the prototype sends no email."
     },
     {
       "from": 1,
@@ -27,7 +27,7 @@
       "to": 3,
       "label": "After the deadline",
       "governed_by": "Whether the update mechanism is correct",
-      "observation": "Strict lease with revision check: 0 outdated grants. Push-only updates: 172. Long cache lifetime: 2,738."
+      "observation": "A correctly sized strict lease, or a revision check: 0 outdated grants after the deadline. Push-only updates: 172. Long cache lifetime: 2,738."
     }
   ],
   "side_tracks": [

@@ -44,5 +44,5 @@
     "name": "Random ranking",
     "value": 0.024
   },
-  "caption": "Word-based retrieval holds up until 3-gram masking (.956 → .598). The stylometric signal collapses at the first masking step and ends at .018, below random ranking. Style-oriented passages only: 60 passages, 260 candidate chapters."
+  "caption": "Word-based retrieval holds up until 3-gram masking (.956 → .598). The stylometric signal collapses at the first masking step and ends at .018, below random ranking. 30 style-oriented passages, 260 candidate chapters."
 }
