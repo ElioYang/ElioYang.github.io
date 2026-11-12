@@ -1,0 +1,330 @@
+{
+  "app": {
+    "name": "Default Inspector",
+    "one_liner": "See the privacy defaults a multiplayer game sets for your age, why each one exists, and contest any of them.",
+    "footer": "Research prototype by Yuxing Yang. The age-tiered defaults reflect my analysis of the FTC's 2022 case against Epic Games and the UK Age Appropriate Design Code. Not legal advice; not affiliated with any game company. Nothing you type leaves this page."
+  },
+  "age_bands": [
+    {
+      "id": "u13",
+      "label": "Under 13"
+    },
+    {
+      "id": "teen",
+      "label": "13–17"
+    },
+    {
+      "id": "adult",
+      "label": "18+"
+    }
+  ],
+  "outcome_types": {
+    "locked": "Not changeable at this age. Your objection is still recorded.",
+    "parent_approval": "This change needs approval from a linked parent account.",
+    "with_safeguards": "You can change this. It turns on with safeguards, after a plain-language notice.",
+    "user_choice": "Your choice. The change applies immediately.",
+    "revert": "Returning to this age's default always applies immediately."
+  },
+  "settings": [
+    {
+      "id": "text_chat_strangers",
+      "label": "Text chat with players you don't know",
+      "flow": {
+        "sender": "You",
+        "information": "Your chat messages",
+        "recipient": "Players you don't know",
+        "principle": "Shared in real time during a match"
+      },
+      "by_age": {
+        "u13": {
+          "default": "Off",
+          "options": [
+            "Off"
+          ],
+          "outcome": "locked",
+          "why": "Open chat with strangers is the flow most likely to expose a young child to contact they cannot assess. Parental consent does not change who is on the other end.",
+          "basis": "analysis"
+        },
+        "teen": {
+          "default": "Off",
+          "options": [
+            "Off",
+            "On (in-match only, text only)"
+          ],
+          "outcome": "with_safeguards",
+          "safeguards": [
+            "Text only, never voice",
+            "Only inside your current match or party",
+            "No private messages",
+            "Report and block buttons stay visible"
+          ],
+          "notice": "Turning this on lets players you don't know read and reply to what you type during matches. They cannot message you privately or hear your voice. You can turn it off any time.",
+          "parent_sees": "That this setting is on. A parent cannot override your choice.",
+          "why": "Teens are old enough to decide this for themselves, but the default should not decide it for them.",
+          "basis": "analysis"
+        },
+        "adult": {
+          "default": "On",
+          "options": [
+            "On",
+            "Off"
+          ],
+          "outcome": "user_choice",
+          "why": "Adult baseline.",
+          "basis": "analysis"
+        }
+      }
+    },
+    {
+      "id": "voice_chat_strangers",
+      "label": "Voice chat with players you don't know",
+      "flow": {
+        "sender": "You",
+        "information": "Your voice",
+        "recipient": "Players you don't know",
+        "principle": "Broadcast live during a match"
+      },
+      "by_age": {
+        "u13": {
+          "default": "Off",
+          "options": [
+            "Off"
+          ],
+          "outcome": "locked",
+          "why": "A voice reveals more than text: age, mood, sometimes location. This flow stays closed for young children.",
+          "basis": "analysis"
+        },
+        "teen": {
+          "default": "Off",
+          "options": [
+            "Off"
+          ],
+          "outcome": "locked",
+          "why": "Teens may open text chat with strangers, but voice stays off: it carries far more personal information than typed text.",
+          "basis": "analysis"
+        },
+        "adult": {
+          "default": "On",
+          "options": [
+            "On",
+            "Off"
+          ],
+          "outcome": "user_choice",
+          "why": "Adult baseline.",
+          "basis": "analysis"
+        }
+      }
+    },
+    {
+      "id": "private_messages_strangers",
+      "label": "Private messages from players you don't know",
+      "flow": {
+        "sender": "Players you don't know",
+        "information": "Private messages",
+        "recipient": "You",
+        "principle": "Delivered one-to-one, outside any match"
+      },
+      "by_age": {
+        "u13": {
+          "default": "Off",
+          "options": [
+            "Off"
+          ],
+          "outcome": "locked",
+          "why": "One-to-one contact from strangers, away from the shared space of a match, is where grooming risk concentrates.",
+          "basis": "analysis"
+        },
+        "teen": {
+          "default": "Off",
+          "options": [
+            "Off"
+          ],
+          "outcome": "locked",
+          "why": "Contact with strangers is limited to the shared space of a match, where others can see it and report it.",
+          "basis": "analysis"
+        },
+        "adult": {
+          "default": "On",
+          "options": [
+            "On",
+            "Off"
+          ],
+          "outcome": "user_choice",
+          "why": "Adult baseline.",
+          "basis": "analysis"
+        }
+      }
+    },
+    {
+      "id": "friend_requests",
+      "label": "Who can send you friend requests",
+      "flow": {
+        "sender": "Other players",
+        "information": "A request to connect",
+        "recipient": "You",
+        "principle": "Accepted requests unlock chat between friends"
+      },
+      "by_age": {
+        "u13": {
+          "default": "Only people linked through a parent account",
+          "options": [
+            "Only people linked through a parent account",
+            "Add one person I know in real life"
+          ],
+          "outcome": "parent_approval",
+          "parent_action": "A parent can approve one specific person the child knows offline. Strangers can never be added.",
+          "why": "Friends should be people a child knows offline. Because friendship unlocks chat, this is the gate that matters most.",
+          "basis": "analysis",
+          "approved_value": "Linked accounts + 1 parent-approved friend"
+        },
+        "teen": {
+          "default": "Friends of friends",
+          "options": [
+            "Friends of friends",
+            "Everyone",
+            "No one"
+          ],
+          "outcome": "user_choice",
+          "parent_sees": "Which option is selected.",
+          "why": "Teens choose. The default starts at a middle option rather than 'Everyone'.",
+          "basis": "prototype"
+        },
+        "adult": {
+          "default": "Everyone",
+          "options": [
+            "Everyone",
+            "Friends of friends",
+            "No one"
+          ],
+          "outcome": "user_choice",
+          "why": "Adult baseline.",
+          "basis": "analysis"
+        }
+      }
+    },
+    {
+      "id": "display_name",
+      "label": "Your display name shown to other players",
+      "flow": {
+        "sender": "The game",
+        "information": "Your chosen display name",
+        "recipient": "Everyone in your matches",
+        "principle": "Shown on screen during and after matches"
+      },
+      "by_age": {
+        "u13": {
+          "default": "Hidden (random nickname shown)",
+          "options": [
+            "Hidden (random nickname shown)",
+            "Shown to approved friends only"
+          ],
+          "outcome": "parent_approval",
+          "parent_action": "A parent can allow the name to be shown to approved friends.",
+          "why": "Children often use real names in display names. Hiding them by default goes beyond what the 2022 order required.",
+          "basis": "analysis",
+          "approved_value": "Shown to approved friends only"
+        },
+        "teen": {
+          "default": "Hidden (random nickname shown)",
+          "options": [
+            "Hidden (random nickname shown)",
+            "Shown to friends",
+            "Shown to everyone"
+          ],
+          "outcome": "user_choice",
+          "parent_sees": "Which option is selected.",
+          "why": "Same protective starting point as under 13, but here the teen decides.",
+          "basis": "prototype"
+        },
+        "adult": {
+          "default": "Shown to everyone",
+          "options": [
+            "Shown to everyone",
+            "Shown to friends",
+            "Hidden (random nickname shown)"
+          ],
+          "outcome": "user_choice",
+          "why": "Adult baseline.",
+          "basis": "analysis"
+        }
+      }
+    },
+    {
+      "id": "parent_visibility",
+      "label": "What a parent can see about your settings",
+      "flow": {
+        "sender": "The game",
+        "information": "Your privacy settings",
+        "recipient": "A linked parent account",
+        "principle": "Visible on request in the parent dashboard"
+      },
+      "by_age": {
+        "u13": {
+          "default": "All settings, with control",
+          "options": [
+            "All settings, with control"
+          ],
+          "outcome": "locked",
+          "why": "Under 13, a verified parent manages these settings.",
+          "basis": "analysis"
+        },
+        "teen": {
+          "default": "Settings visible, no veto",
+          "options": [
+            "Settings visible, no veto"
+          ],
+          "outcome": "locked",
+          "why": "Parents can see what is on, so they can talk about it. They cannot overrule the teen's choice.",
+          "basis": "analysis"
+        },
+        "adult": {
+          "default": "Nothing",
+          "options": [
+            "Nothing"
+          ],
+          "outcome": "locked",
+          "why": "No parent link for adults.",
+          "basis": "analysis"
+        }
+      }
+    }
+  ],
+  "age_check": {
+    "u13": "Age is self-declared at sign-up; accounts under 13 require a verified parent.",
+    "teen": "Age is self-declared at sign-up.",
+    "adult": "Age is self-declared at sign-up."
+  },
+  "flattened_view": {
+    "toggle_label": "Show a one-size-fits-all platform",
+    "explainer": "Many platforms apply one baseline, usually an adult's, to everyone. I call this normative flattening (SOTICS 2026). Turn this on to see the adult defaults applied to the age you selected. Settings that change are highlighted."
+  },
+  "contest_record": {
+    "title": "Your contest record",
+    "fields": [
+      "Setting",
+      "Age band",
+      "Requested change",
+      "Your reason",
+      "Outcome",
+      "Rule applied",
+      "Who can see this record",
+      "Time"
+    ],
+    "who_can_see": {
+      "u13": "You and your linked parent",
+      "teen": "You only. A parent sees only the resulting setting.",
+      "adult": "You only"
+    },
+    "does_not_show": "What this record does not show: whether every copy of the old setting (caches, secondary services) has been updated. A trustworthy record should say what it did not check."
+  },
+  "basis_labels": {
+    "analysis": "From my analysis of the FTC's 2022 Epic Games case",
+    "prototype": "Prototype choice: not covered by that analysis, so set by applying the UK Age Appropriate Design Code's high-privacy-by-default standard"
+  },
+  "general_rules": [
+    "Any change back to the age band's own default value uses outcome 'revert' (applied immediately), whatever the setting's outcome type.",
+    "Each contest record keeps its own status and its own action buttons. While a record for a setting is pending, the Contest button for that setting is replaced by 'Request pending' plus a 'Withdraw' link.",
+    "Switching to a different age band marks every pending record as 'Withdrawn: age band changed' and resets values to that band's defaults. Clicking the age band that is already selected does nothing.",
+    "Reason text is trimmed before validation; when an objection is required (only one option), whitespace-only text is rejected with an inline message."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Where exposure arises along an access transition",
+  "source": "Yang, CSLAW 2027 preprint, Table 7",
+  "axis": ["Request (t_r)", "Classified (t_c)", "Budget ends (t_c + b)", "Later"],
+  "segments": [
+    {"from": 0, "to": 1, "label": "Before classification", "governed_by": "How the request is classified, and what happens in the meantime", "observation": "Review-first: 73/73 promotional probes still go through. Interim restriction: 0/73."},
+    {"from": 1, "to": 2, "label": "Enforcement window", "governed_by": "Lease length within the staleness budget b", "observation": "Strict lease at b = 2: 254 false grants fall inside the window the budget allows."},
+    {"from": 2, "to": 3, "label": "After the budget", "governed_by": "Whether the mechanism is correct", "observation": "Strict lease + revision guard: 0 late false grants. Push-only: 172. Long TTL: 2,738."}
+  ],
+  "side_tracks": [
+    {"label": "Unprobed path", "governed_by": "What the evidence declares it checked", "observation": "A secondary path served stale grants on 5/5 probes while primary-path evidence reported zero errors."},
+    {"label": "Already released", "governed_by": "Nothing, once released", "observation": "Encryption protects later values; an old key with old ciphertext still recovers the old value."}
+  ],
+  "caption": "Fixing staleness closes only one segment. The other exposures need a different remedy, and an evidence record that says what it did not check."
+}

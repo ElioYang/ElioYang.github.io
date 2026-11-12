@@ -1,0 +1,86 @@
+{
+  "origin": "https://elioyang.github.io",
+  "name": "Yuxing Yang",
+  "portfolio_title": "Research portfolio",
+  "selected_research": "Selected research",
+  "projects": "Projects",
+  "publications": "Selected publications",
+  "nav_publications": "Publications",
+  "demo": "Demo",
+  "cv": "CV ↗",
+  "full_cv": "Full CV ↗",
+  "email": "Email ↗",
+  "orcid": "ORCID ↗",
+  "github": "GitHub ↗",
+  "contact": "Get in touch ↗",
+  "contact_email": "yuxing.yang.gradapps@gmail.com",
+  "skip": "Skip to content",
+  "navigation": "Main navigation",
+  "back": "← All projects",
+  "home_back": "← Back to Yuxing Yang’s portfolio",
+  "demo_title": "Try the demo: Default Inspector",
+  "demo_description": "See the privacy defaults a game sets at each age, and contest them.",
+  "not_found": "Page not found",
+  "not_found_description": "The requested page could not be found. Return to Yuxing Yang’s research portfolio.",
+  "demo_loading": "Loading Default Inspector…",
+  "doi": "DOI ↗",
+  "chart_source": "Source: {source}",
+  "chart_data": "View chart data",
+  "chart_error": "The figure could not be loaded. Please reload the page.",
+  "timeline_error": "The timeline could not be loaded. Please reload the page.",
+  "chart_short_names": {
+    "Word TF–IDF": "Word TF–IDF",
+    "Structural features": "Structural",
+    "Stylometry": "Stylometry",
+    "ML-KEM-768": "ML-KEM-768",
+    "Hybrid-512 (ECDH + ML-KEM-512)": "Hybrid-512"
+  },
+  "publication_status": {
+    "assets/papers/asist2026-stylometry.pdf": "Accepted; forthcoming"
+  },
+  "additional_project_links": {
+    "ai-science": [
+      {
+        "label": "James Scholar office-hour report (November)",
+        "href": "../assets/papers/JS_Office_Hour_Nov_Yuxing_Yang.pdf"
+      }
+    ]
+  },
+  "report_files": [
+    "JS_Interim_Report_Yuxing_Yang.pdf",
+    "JS_Office_Hour_Nov_Yuxing_Yang.pdf"
+  ],
+  "demo_ui": {
+    "prototype": "Research prototype",
+    "age_band": "Age band",
+    "reset": "Reset",
+    "empty": "No contests yet.",
+    "contest": "Contest this default",
+    "requested": "Requested change",
+    "reason": "Your reason (optional, up to 280 characters)",
+    "objection": "Your objection (up to 280 characters)",
+    "required": "Please write an objection before submitting.",
+    "submit": "Submit contest",
+    "cancel": "Cancel",
+    "pending": "Request pending",
+    "withdraw": "Withdraw",
+    "awaiting_parent": "Pending parent approval",
+    "awaiting_confirmation": "Awaiting your confirmation",
+    "withdrawn": "Withdrawn",
+    "age_withdrawn": "Withdrawn: age band changed",
+    "approved": "Parent approved",
+    "applied": "Applied",
+    "safeguarded": "Applied with safeguards",
+    "cancelled": "Cancelled",
+    "approve": "Simulate parent approves",
+    "turn_on": "Turn on",
+    "parent_sees": "A parent sees: {value}",
+    "changed": "changed",
+    "analysis": "Analysis",
+    "prototype_basis": "Prototype choice",
+    "no_reason": "—",
+    "record_id": "Request {id}",
+    "back": "← Back to Yuxing Yang’s portfolio",
+    "error": "Default Inspector could not load its rules. Please reload the page."
+  }
+}

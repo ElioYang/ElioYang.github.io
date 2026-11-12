@@ -1,0 +1,31 @@
+{
+  "title": "Handshake latency under concurrent client load",
+  "source": "Yang, ITC 2026 (testbed paper), Table 5",
+  "x_label": "Concurrent clients",
+  "x": [
+    "50",
+    "100",
+    "200"
+  ],
+  "y_label": "Mean latency (ms)",
+  "series": [
+    {
+      "name": "ML-KEM-768",
+      "values": [
+        132.3,
+        215.2,
+        558.2
+      ]
+    },
+    {
+      "name": "Hybrid-512 (ECDH + ML-KEM-512)",
+      "values": [
+        156.9,
+        324.7,
+        764.0
+      ],
+      "highlight": true
+    }
+  ],
+  "caption": "In single-client tests, all seven configurations fall within 27.7–35.4 ms. Under concurrent load, the hybrid's extra cost becomes visible (+50.9% mean latency at 100 clients). One trial per configuration and load level, with synchronized connections."
+}
