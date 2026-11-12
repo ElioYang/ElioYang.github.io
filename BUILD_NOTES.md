@@ -36,7 +36,7 @@ One internal specification conflict was resolved in favor of the hard rule: §7.
 4. **Links/PDFs:** structural checks resolve every internal path. All 11 retained PDF paths return 200 with a PDF signature locally. External navigation links were checked with `curl -sIL --max-time 25`: ORCID **200**; GitHub **200**; DOI **302 → ACM 403** with `cf-mitigated: challenge`. The DOI resolves to ACM, but automated retrieval is challenged; this is not recorded as a missing DOI.
 5. **Accessibility/keyboard:** Lighthouse home **100/100**, Demo **100/100**. Main change/contest flows were operated through keyboard focus and Enter, with textarea validation. A complete initially visible-control focus/Tab traversal covered 31 controls, with no positive tabindex or focus trap. Light/dark computed-style checks across all nine pages confirmed sampled visible text and data-bearing SVG strokes at least 4.5:1. This is not a real screen-reader certification.
 6. **Facts:** `FACT_CHECK.md` now contains 294 comparison rows. New team/role/method claims, six-law scope, mapping rules, all harm sample sizes/percentages, preliminary findings, eight-setting policy values, pipeline, baseline values, and award image claims are included. Discrepancies are listed, not silently fixed.
-7. **After deployment:** final logged-out results will be appended after the Pages build completes. The test uses a fresh isolated browser context, not an authenticated session or private-site bypass.
+7. **After deployment:** a fresh isolated/logged-out Chrome context opened all nine production pages with HTTP 200, confirmed six project rows, eight Demo settings, findings followed directly by 42 heatmap cells, and the preliminary badge. It downloaded the James Scholar interim PDF (HTTP 200, 289,456 bytes, PDF signature), opened the new deep link, received the custom 404 for a nonexistent nested path, and followed the working home link. No account login or private-site bypass was used.
 
 ## Content limitations retained verbatim
 
@@ -46,3 +46,9 @@ One internal specification conflict was resolved in favor of the hard rule: §7.
 - Figure B's “test messages still went out” can imply actual delivery, while the paper says no email was sent; the mechanism wording also conflates separate strict-lease/guard results. Preserved and flagged.
 - The pipeline attributes the whole diagram to the interim report, while the 14-new-project count comes from the November update; 1,743 still lacks the full source inventory. Preserved and flagged.
 - CV status/terminology, missing 2025 PDF/author initials, journal extension details, and geographic/event details not established by the plaque remain documented in FACT_CHECK.md.
+
+## Published acceptance and final boundary check
+
+The first v4 Pages build (`d0671d8814046ca94b943eeb23ad11988bf238fb`) completed successfully, and the full logged-out acceptance above passed against https://elioyang.github.io/. The final local regression additionally checks that the adult one-size-fits-all view has zero changed cards and keeps the adult explanation; only changed cards show `flattened_exposes`. The first deployment's submitted content/data were unchanged by this final behavior correction.
+
+The retained QA artifacts include the 18 required screenshots, light/dark screenshots, results, contrast samples (lowest sampled text ratio 4.805:1), Lighthouse reports, negative-gate control, and public acceptance results. Browser scripts and build sources remain outside the public root. Both reports were updated as requested; raw coding revisions and the listed factual mismatches were not invented or silently repaired.
